@@ -1,3 +1,5 @@
+USE william;
+
 DROP TABLE IF EXISTS albums;
 
 CREATE TABLE albums (
@@ -5,7 +7,7 @@ CREATE TABLE albums (
     artist VARCHAR(50) NOT NULL,
     name VARCHAR(100) NOT NULL,
     release_date INT(4) NOT NULL,
-    sales FLOAT NOT NULL,
+    sales DECIMAL(10,6) NOT NULL,
     genre VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 );
