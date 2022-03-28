@@ -1,17 +1,8 @@
 USE william;
 
--- INSERT into albums (artist, name, release_date, genre, sales)
--- VALUES ('Micheal Jackson', 'Triller', 1982, 'Pop, post-disco', 49.2);
---
---
--- INSERT into albums (artist, name, release_date, genre, sales)
--- VALUES ('AC/DC', 'Back in Black', 1980, 'Hard rock', 29.5);
---
---
--- INSERT into albums (artist, name, release_date, genre, sales)
--- VALUES ('Whitney Houston', 'The Bodyguard', 1992, 'R&B', 32.4),
---        ('Meat Loaf', 'Bat Out of Hell', 1977, 'Hard rock', 21.7),
---        ('Eagles', 'Their Greatest Hits', 1976, 'Country rock', 41.2);
+TRUNCATE albums
+
+
 
 INSERT INTO albums (artist, name, release_date, sales, genre)
 VALUES ('Michael Jackson', 'Thriller', 1982, 47.3, 'Pop,rock, R&B'),
