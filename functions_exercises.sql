@@ -90,7 +90,7 @@ WHERE (YEAR(hire_date) >= 1990 AND YEAR(hire_date) <= 1999)
 AND (MONTH(birth_date) = 12 AND DAY(birth_date) = 25)
 ORDER BY hire_date DESC, birth_date;
 # For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You might also need to use now() or curdate()).
-SELECT DATEDIFF(CURDATE(), hire_date) AS days_worked, CURDATE(), hire_date
+SELECT DATEDIFF(CURDATE(), hire_date) AS days_worked, CURDATE(), hire_date, emp_no
 FROM employees
 WHERE (YEAR(hire_date) >= 1990 AND YEAR(hire_date) <= 1999)
   AND (MONTH(birth_date) = 12 AND DAY(birth_date) = 25);
