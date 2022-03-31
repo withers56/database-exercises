@@ -6,14 +6,12 @@ FROM titles;
 # Update the query to find just the unique last names that start and end with 'E' using GROUP BY. The results should be:
 SELECT last_name
 FROM employees
-WHERE last_name like 'e%'
-and last_name like '%e'
+WHERE last_name like 'e%e'
 GROUP BY last_name;
 # Update your previous query to now find unique combinations of first and last name where the last name starts and ends with 'E'. You should get 846 rows.
 SELECT last_name, first_name, count(emp_no)
 FROM employees
-WHERE last_name like 'e%'
-  and last_name like '%e'
+WHERE last_name like 'e%e'
 GROUP BY last_name, first_name;
 # Find the unique last names with a 'q' but not 'qu'
 SELECT last_name
