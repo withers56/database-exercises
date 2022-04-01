@@ -14,18 +14,21 @@ SELECT department.dept_name AS Department_name,
 FROM employees as manager
          JOIN dept_manager AS deptManager ON manager.emp_no = deptManager.emp_no
          JOIN departments AS department ON deptManager.dept_no = department.dept_no
-WHERE gender = 'f';
+WHERE gender = 'f' AND deptManager.to_date = '9999-01-01';
 # Find the current titles of employees currently working in the Customer Service department.
 
 # SELECT COUNT(emp.first_name), department.dept_name
 # FROM employees as emp
 # JOIN dept_emp as department_emp ON emp.emp_no = department_emp.emp_no
 # JOIN departments as department ON department_emp.dept_no = department.dept_no;
-SELECT titles.title AS title, COUNT(employees.first_name) AS Total
-FROM employees
-JOIN titles ON employees.emp_no = titles.emp_no
-WHERE titles.to_date = '9999-01-01'
-GROUP BY titles.title;
+SELECT t.title AS title, COUNT(t.emp_no) AS Total
+FROM titles as t
+    JOIN dept_emp de on t.emp_no = de.emp_no
+    JOIN departments d on de.dept_no = d.dept_no
+WHERE de.to_date = '9999-01-01'
+AND t.to_date = '9999-01-01'
+AND d.dept_name = 'Customer Service'
+GROUP BY t.title;
 
 # Find the current salary of all current managers.
 SELECT department.dept_name AS Department_name,
